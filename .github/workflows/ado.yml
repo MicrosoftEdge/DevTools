@@ -1,0 +1,21 @@
+name: Sync issue to Azure DevOps work item
+
+on:
+  issues:
+    types:
+      [labeled]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: captainbrosset/github-actions-issue-to-work-item@simple-sync
+        env:
+          ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
+          github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
+        with:
+          label: 'tracked'
+          ado_organization: 'microsoft'
+          ado_project: 'Edge'
+          ado_tags: 'DevToolsGitHubSync'
+          ado_area_path: 'Edge\Dev Experience\Developer Tools'
