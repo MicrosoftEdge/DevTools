@@ -2,7 +2,7 @@
 # DevTools: Omnibox Commands
 
 Authors:
- - [Erica Draud](https://github.com/herdraud), Program Manager
+ - [Erica Draud](https://github.com/erdraud), Program Manager
 
 ## Status of this feature
 This feature is a proposed experiment. To track the project status, you can see the scenario here: [[Experiment] DUX Omnibox Commands](https://dev.azure.com/microsoft/Edge/_workitems/edit/29631932)
