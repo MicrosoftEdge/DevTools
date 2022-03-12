@@ -10,7 +10,7 @@ This feature is a proposed experiment. To track the project status, you can see 
 ## Introduction
 Earlier this year, the Chrome team released the [Commander]( https://bugs.chromium.org/p/chromium/issues/detail?id=1014639) as a text interface that provides a shortcut for common commands for browser users. The DevTools team used this as the framework for their Omnibar hackathon project. There’s some uncertainty around the usage and discoverability of the tool, so we’re starting with a flagged experiment.
 ![Omnibox UI](omni.PNG)
-You’ll notice that many of the commands in this feature can be found in the [Command Palette]( https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, so why have these features in the address bar (from this point forward referred to as the omnibox)? We know that users would like a faster way to complete their tasks in DevTools, and the Omnibox Commands feature enables users to do so without having to first open the Developer Tools. Additionally, we’ve included features that are specific to the browser window: Edge internal urls and last viewed pages.
+You’ll notice that many of the commands in this feature can be found in the [Command Menu]( https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, so why have these features in the address bar (from this point forward referred to as the omnibox)? We know that users would like a faster way to complete their tasks in DevTools, and the Omnibox Commands feature enables users to do so without having to first open the Developer Tools. Additionally, we’ve included features that are specific to the browser window: Edge internal urls and last viewed pages.
 
 ## Goals
   1. To simplify DevTools users’ workflow and
@@ -37,7 +37,7 @@ To get a list of the webpages you recently closed, type `#`.
 * Add Documentation Search
 
 ## Things to consider
-* Commands shouldn't conflict with Bing searches
+* Commands shouldn't conflict with search engine searches
 * Accessibility and privacy compliance needs work
 * Need to remove Chrome's petal suggestions for technical, localization, and business reasons.
 * Commands are relatively easy to add, so we can always add more in the future
