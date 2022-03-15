@@ -9,7 +9,9 @@ This feature is a proposed experiment.
 
 ## Introduction
 Earlier this year, the Chrome team released the [Commander]( https://bugs.chromium.org/p/chromium/issues/detail?id=1014639) as a text interface that provides a shortcut for common commands for browser users. The DevTools team used this as the framework for their Omnibar hackathon project. There’s some uncertainty around the usage and discoverability of the tool, so we’re starting with a flagged experiment.
+
 ![Omnibox UI](omni.PNG)
+
 You’ll notice that many of the commands in this feature can be found in the [Command Menu]( https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, so why have these features in the address bar (from this point forward referred to as the omnibox)? We know that users would like a faster way to complete their tasks in DevTools, and the Omnibox Commands feature enables users to do so without having to first open the Developer Tools. Additionally, we’ve included features that are specific to the browser window: Edge internal urls and last viewed pages.
 
 ## Goals
@@ -18,16 +20,20 @@ You’ll notice that many of the commands in this feature can be found in the [C
       * Users will find this valuable in that it will save them time by minimizing the steps users need in their DevTools workflow; we'll know it's true if 20% of users are 2-week active users (returning users).
       * Users will use navigation commands more than action commands; we'll know it's true if the number of navigation commands is at least 20% more than the number of action commands.
       * Users will have trouble finding this feature without a tooltip/pop-up; we'll know it's true with overall usage (if people turn it on).
-This initial experiment will run for two weeks off by default for external users and on 100% for internal users. While we will be testing all three hypotheses, we will focus on iterating for validating the feature’s value and which commands are most valuable.
+
+This initial experiment will run as a flagged rollout especially since the UI may also affect users outside of DevTools. We will test all three hypotheses and focus on iterating for validating the feature’s value as well as which commands are most valuable.
 
 ## Features
 
 ### URL
 To easily access internal URLs, you can type in a question mark `?`. This will pull up a list of all the Edge internal URLs. To access the existing URLs, click [here](#available-urls).
+
 ### Command
 Typing `>` will pull up the available commands for DevTools. These commands were exported from those available in DevTools now. The only command added to the list that hasn’t already been added to the Commander experiment is *Device Mode: Enable Device Mode*, and we will omit this command if we don’t have time in the first iteration to add it. Most of these commands are opening panels or changing the appearance or theme of the DevTools. To access the existing commands, click [here](#available-commands).
+
 ### Search
 If you type something in that isn’t a command, the Omnibox will display an option to search the text typed in the user’s preferred search engine.
+
 ### Recently closed
 To get a list of the webpages you recently closed, type `#`.
 
