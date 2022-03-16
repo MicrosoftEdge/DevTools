@@ -6,6 +6,8 @@ Authors:
 ## Status of this feature
 This feature is a proposed experiment.
 
+![Documentation Search UI](doc-search.png)
+
 ## Background
 This project was part of the Project Mallard effort to improve Bing searches for developers. Search and solution finding occupy most of a developer’s time on the web. On average, a developer may click 5-10 times until they have found the solution they are looking for. Developers use a variety of services and software that provide contextual hints as to what solutions they might look for, or what work they are assigned to on any given day. These services may include (but are not limited to) ADO, Jira, GitHub, or any other project management software that has their day-to-day work tracked. In combination with the Microsoft Developer Graph, information about the developer can be used to inform and suggest more intelligent and relevant searches.  
 
@@ -31,8 +33,6 @@ Open Source developer Tobias Koppers commented on his challenge to find solution
 This initial experiment will run as a flagged rollout especially since the UI may also affect users outside of DevTools. We will test all three hypotheses and focus on iterating for validating the feature’s value as well as which commands are most valuable.
 
 ## Solutions
-
-![Documentation Search UI](doc-search.png]
 
 ### Solution 1: Omnibox Integration
 Our ideal option is to have the Documentation Search integrated into the address bar (called the omnibox from now on). We would use a unique character typed into the omnibox to trigger the feature. In the Omnibox experiment, there are other character like `?` and `#` that users can type before typing their command or selecting the command from the drop-down menu. We would find a character to access a similar experience to find the right documentation for the search. We could have a series of keywords that the user can type to access the appropriate documents.
