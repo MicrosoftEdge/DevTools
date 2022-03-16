@@ -18,9 +18,9 @@ Open Source developer Tobias Koppers commented on his challenge to find solution
 > The webpack project consists of over 100 repositories across 2 GitHub projects. If I have to track down a particular issue, I would have to search for it across either all of GitHub or every one of the individual projects and repositories. It would save me hours a week to simply configure my Edge/Bing search to include search results across specific GitHub repositories/projects and return results from PR & Issues.  
 
 ## Goals
-  1. Detect when a Microsoft Edge user is a Developer and
+1. Detect when a Microsoft Edge user is a Developer and
 2. Collect all relevant solution areas based on criteria of assigned work items and tasks and 
-3. Leverage Bing’s search platform to create developer focused customer models and insights.
+3. Leverage Bing’s search platform and Microsoft's documentation to create developer focused customer models and insights.
 
 ## Non-goals
 1.	Build a separate search, AI, ML model from Bing today
@@ -62,7 +62,7 @@ This search bar could have the UI pulled from the search bar on docs.microsoft.c
 
 ## Things to consider
 * Discoverability could be an issue
-Searches shouldn't conflict with traditional search engine searches
+* Searches shouldn't conflict with traditional search engine searches
 * Accessibility and privacy compliance needs work
 * Need to remove Chrome's petal suggestions for technical, localization, and business reasons
 * Commands are relatively easy to add, so we can always add more in the future
