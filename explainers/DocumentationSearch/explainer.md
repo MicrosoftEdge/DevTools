@@ -32,7 +32,7 @@ This initial experiment will run as a flagged rollout especially since the UI ma
 
 ## Solutions
 
-![Documentation Search UI](doc-search.PNG]
+![Documentation Search UI](doc-search.png]
 
 ### Solution 1: Omnibox Integration
 Our ideal option is to have the Documentation Search integrated into the address bar (called the omnibox from now on). We would use a unique character typed into the omnibox to trigger the feature. In the Omnibox experiment, there are other character like `?` and `#` that users can type before typing their command or selecting the command from the drop-down menu. We would find a character to access a similar experience to find the right documentation for the search. We could have a series of keywords that the user can type to access the appropriate documents.
