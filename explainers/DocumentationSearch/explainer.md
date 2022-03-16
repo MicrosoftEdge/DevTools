@@ -1,7 +1,7 @@
 # DevTools: Documentation Search
 Authors:
 - [Erica Draud](https://github.com/erdraud), Program Manager
-- Sean Larkin
+- [Sean Larkin](https://github.com/TheLarkInn), Technical Program Manager
 
 ## Status of this feature
 This feature is a proposed experiment.
