@@ -48,6 +48,22 @@ To get a list of the webpages you recently closed, type `#`.
 * Need to remove Chrome's petal suggestions for technical, localization, and business reasons.
 * Commands are relatively easy to add, so we can always add more in the future
 
+## FAQ:
+Q: Does it have extensibility so other could add in additional commands?
+A: Not in scope for this experiment, but a great idea for the future.
+Q: Will this require a totally separate implementation vs. upstream? or hook into theirs?
+A: We will be integrating directly into the Omnibox, not hooking into the upstream Commander.
+Q: Is there an "all" option? Will customers know to use `?` and `>`?
+A: We will be working with the omnibox team to clarify the best characters or strings to trigger the DevTools commands.
+Q: If this is integrated into the address bar, will they know to type `?` to get help on the commands that are available?
+A: We recognize there will be discoverability challenges, and we will be exploring that as we go.
+Q: Are we planning to add a toggle or setting in browser settings that enable this feature after the rollout?
+A: That could be a future option, but it is not in scope.
+Q: Are these commands going to be available for puppeteer and/or playwright?
+A: That is out of scope for this project.
+Q: Some actions do trigger opening DevTools. Is it in or out of scope to be able to complete actions without opening DevTools?
+A: These commands will open DevTools and conduct the requested action. The benefit is that this will be done without the user having to open the DevTools first to speed up their workflow.
+
 ## Available URLs
 * edge://about/
 * edge://accessibility/
