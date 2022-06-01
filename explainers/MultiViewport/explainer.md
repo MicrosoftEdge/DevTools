@@ -17,8 +17,9 @@ This feature is experimental and in active development. See [Changelog section](
 
 ## Hypotheses
 *What hypotheses do we want to validate with user research? They should be formatted like the following:* 
-*- We believe this [Concept] will solve [Problem] and be valuable to [Customers] while doing [Job-to-be-done]. We believe this [Concept] will increase/decrease [End-User Metric].*
-*- We believe that [Customers] will be successful solving [Problem] using [Experience] while doing [Job-to-be-done]. We will know this to be true when we see [Success Criteria].*
+- *We believe this [Concept] will solve [Problem] and be valuable to [Customers] while doing [Job-to-be-done]. We believe this [Concept] will increase/decrease [End-User Metric].*
+- *We believe that [Customers] will be successful solving [Problem] using [Experience] while doing [Job-to-be-done]. We will know this to be true when we see [Success Criteria].*
+
 *Refer to [Develop your hypothesis](https://microsoft.sharepoint.com/teams/MicrosoftSignal/SitePages/Develop-Your-Hypothesis.aspx) for more info.*
 
 ## Experimentation
