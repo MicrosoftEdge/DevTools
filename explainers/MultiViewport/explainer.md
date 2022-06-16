@@ -35,16 +35,18 @@ Already existing tools on the market include:
 - [Polypane](https://polypane.app/)
 - [Sizzy](http://sizzy.co/)
 - [Responsively](https://responsively.app/)
+- [Blisk](https://blisk.io/)
 
 Each of these applications allow users to add multiple (more than 2) devices through their external application/extension. All these applications allow for synchronization when scrolling and have a multitude of device options (which did not account for newer devices). Some apps became glitchy with too many viewports/devices selected.
 
 ## Goals
 
-1. Primary goals include increasing the number of users who use enable DeviceMode and increase number of users who test more than 1 device.
+1. Primary goals include increasing the number of users who enable DeviceMode and increase number of users who test more than 1 device.
 1. Improve satisfaction and efficiency in designing a website through easy access to and visibility of multiple viewports.
 1. Metrics to measure success:
-    1. Session length with DeviceMode enabled (1D vs 2D v 10D user).
+    1. Session length with DeviceMode enabled (1D v 2D v 10D user).
     1. Number of users who enable DeviceMode.
+    1. Proportion of device mode users who use 2+ viewports compared to all total device mode users in the 1st place
 
 ## Non-goals
 
@@ -53,7 +55,7 @@ Each of these applications allow users to add multiple (more than 2) devices thr
 
 ## Hypotheses
 
-- We believe that using DeviceMode with multiple viewports will increase efficiency in DevTools customers. Additionally, it will increase user engagement either in session length or number of sessions. Web Developers can be more efficient using DeviceMode if they can view their web pages in multiple screen sizes, dimensions, and device forms side-by-side in DevTools. 
+- We believe that using DeviceMode with multiple viewports will increase efficiency in DevTools customers. Additionally, it will increase user engagement either in session length or number of sessions. Web Developers can be more efficient using DeviceMode if they can view their web pages in multiple screen sizes, dimensions, and device forms side-by-side in DevTools while they make changes as this avoids having to manually resize the viewport. 
 - The current single viewport device mode has valuable screen real estate that is being underutilized and we think that we can bring in new functionality by adding multiple viewports without negatively changing the experience and functionality today. As of right now, multiple viewports are available but only when using extensions or multiple tools. Adding multiple viewports directly into DevTools will streamline the user experience.
 
 ## Experimentation
@@ -90,9 +92,9 @@ We have two designs: one for the feature as a whole and one for our intern proje
 
 Link to design for our project implementation (scoped for two viewports): 
 
-[Design Draft 1](#https://microsoft-my.sharepoint.com/:b:/p/t-hanamemon/Ef3fIWdbAHpLigegfGOgx_IBmWO8e6FayqVmvkjALdJwiw?e=tmLd9C)
+![Design Draft 1](DesignDraft1.png)
 
-[Design Draft 2](#https://microsoft-my.sharepoint.com/:b:/p/t-evelynchou/ESm5uGXiKZ5KmAgAXnTuTlsBO0llV8PjQa5_VkAHZB3aVg?e=OQ6Kgh)
+![Design Draft 2](DesignDraft2.png)
 
 ### Open Questions and Ideas
 
@@ -101,9 +103,9 @@ Link to design for our project implementation (scoped for two viewports):
 - How many screens does user want to see all at once before they need to scroll (default vs user customization).
 - How would this be affected by placement of sidebar.
 
-## Sizing the Business Opportunity
+<!-- ## Sizing the Business Opportunity
 
-Given that Device Mode is the second most used feature in DevTools users, such as professional developers and website testers, will continue to rely on Edge DevTools to streamline their processes. This feature will drive developers to Edge when they're specifically testing multiple screen sizes/devices/layouts.
+Given that Device Mode is the second most used feature in DevTools users, such as professional developers and website testers, will continue to rely on Edge DevTools to streamline their processes. This feature will drive developers to Edge when they're specifically testing multiple screen sizes/devices/layouts. -->
 
 ## Changelog
 
