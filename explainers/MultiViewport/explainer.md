@@ -80,11 +80,11 @@ Users will be able to add a new device to the viewport by simply checking a box 
 
 ### Open DevTools against a new viewport
 
-DevTools will remain the same, regardless of the number of devices in the viewport. As in the current version of DevTools the user will be able to choose the placement of DevTools on their screen and expand/shrink the DevTools window.
+DevTools will remain the same, regardless of the number of devices in the viewport. As in the current version of DevTools the user will be able to choose the placement of DevTools on their screen and expand/shrink the DevTools window. Initial exection of the feature will attach DevTools to one (primary) viewport. The larger goal of this project is to synchronize all the viewports with the DevTools.  
 
 ### Synchronize browsing and inspection across viewports
 
-Browsing will be synchronized across devices in the viewport, meaning that scrolling in one device would mean all other devices would be kept in sync so they are displaying as close to the same content as possible.. The same will also be true for inspecting and selecting items across different devices in the viewport.
+Browsing will be synchronized across devices in the viewport, meaning that scrolling in one device would mean all other devices would be kept in sync so they are displaying as close to the same content as possible. The same will also be true for inspecting and selecting items across different devices in the viewport.
 
 ## Design
 
