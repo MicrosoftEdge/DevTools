@@ -2,9 +2,9 @@
 
 ## Authors
 
-- Evelyn Chou, Explorer Intern
-- Jenna Sasson, Explorer Intern
-- Hana Memon, Explorer Intern
+- [Evelyn Chou](https://github.com/evelynchou02), Explorer Intern
+- [Hana Memon](https://github.com/hanamemon), Explorer Intern
+- [Jenna Sasson](https://github.com/jenna-sasson), Explorer Intern
 
 ## Status of this feature
 
