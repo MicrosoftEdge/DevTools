@@ -5,6 +5,7 @@
 - [Evelyn Chou](https://github.com/evelynchou02), Explorer Intern
 - [Hana Memon](https://github.com/hanamemon), Explorer Intern
 - [Jenna Sasson](https://github.com/jenna-sasson), Explorer Intern
+- Ryan Hayen, Designer 
 
 ## Status of this feature
 
@@ -88,11 +89,11 @@ Browsing will be synchronized across devices in the viewport, meaning that scrol
 
 ## Design
 
-We have two designs: one for the feature as a whole and one for our intern project implementation. While the implementation of our project will start with only adding a second device, the design we created is scalable to allow for a larger number of devices all in one viewport. The first design adds an entirely new viewport (almost like a new tab) for a second device, which while it works well for two devices, would not be manageable for a larger scope. The second design takes this into account and adds multiple devices into a grid formation in one viewport so users can more easily view a greater number of devices.
+We have two designs: one for the feature as a whole and one for our intern project implementation. While the implementation of our project will start with *only* adding a second device, the design we created is scalable to allow for a larger number of devices all in one viewport. 
 
-Link to design for our project implementation (scoped for two viewports): 
+The first design adds an entirely new viewport (almost like a new tab) for a second device. The second design allows users to add multiple devices into a grid formation in one viewport so users can more easily view a greater number of devices. Current user research suggets that 3-5 devices on the viewport would provide greater efficiency. 
 
-![Design Draft 1](DesignDraft1.png)
+![Design Mockup](DesignMockup.png)
 
 ![Design Draft 2](DesignDraft2.png)
 
