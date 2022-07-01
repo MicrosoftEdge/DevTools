@@ -29,7 +29,7 @@ The history of the Device Mode feature in DevTools predates the current, diverse
 - Allow users working in Device Mode to be able to add multiple viewports for different devices at one time. Using the WebContents class, users will be able to add extra devices using Headless Mode. Users will be able to see multiple sizes (and different devices that use different operating systems, e.g., iPhone 11 & Galaxy Tab A7) side by side in DevTools. By adding multiple viewports, users can use Device Mode in a more streamlined way without negatively affecting the current experience.
 - Users will be more easily able to complete their JTBD if they can see multiple devices at once. They will make comparisons of the functionality and visual aspects of websites in multiple sizes more quickly, increasing overall productivity.
   
-## Competitive Research
+## Prior Art
 
 Already existing tools on the market include:
 
@@ -38,30 +38,12 @@ Already existing tools on the market include:
 - [Responsively](https://responsively.app/)
 - [Blisk](https://blisk.io/)
 
-Each of these applications allow users to add multiple (more than 2) devices through their external application/extension. All these applications allow for synchronization when scrolling and have a multitude of device options (which did not account for newer devices). Some apps became glitchy with too many viewports/devices selected.
-
-## Goals
-
-1. Primary goals include increasing the number of users who enable DeviceMode and increase number of users who test more than 1 device.
-1. Improve satisfaction and efficiency in designing a website through easy access to and visibility of multiple viewports.
-1. Metrics to measure success:
-    1. Session length with DeviceMode enabled (1D v 2D v 10D user).
-    1. Number of users who enable DeviceMode.
-    1. Proportion of device mode users who use 2+ viewports compared to all total device mode users in the 1st place
-
-## Non-goals
-
-- This feature will not change the default experience of the current Device Mode in DevTools. This feature will be additive/optional.
-- For the initial implementation of this feature, we will only support 2 viewports, but we are designing the feature to scale up to N viewports in the future.
+Each of these applications allow users to add multiple (more than 2) devices through their external application/extension. All these applications allow for synchronization when scrolling and have a multitude of device options (which did not account for newer devices). 
 
 ## Hypotheses
 
 - We believe that using DeviceMode with multiple viewports will increase efficiency in DevTools customers. Additionally, it will increase user engagement either in session length or number of sessions. Web Developers can be more efficient using DeviceMode if they can view their web pages in multiple screen sizes, dimensions, and device forms side-by-side in DevTools while they make changes as this avoids having to manually resize the viewport. 
 - The current single viewport device mode has valuable screen real estate that is being underutilized and we think that we can bring in new functionality by adding multiple viewports without negatively changing the experience and functionality today. As of right now, multiple viewports are available but only when using extensions or multiple tools. Adding multiple viewports directly into DevTools will streamline the user experience.
-
-## Experimentation
-
-We know this feature will be shipped as an experiment in the Microsoft Edge DevTools.
 
 ### Trigger Conditions and Treatment
 
