@@ -9,6 +9,8 @@ This feature is in Canary 105.
 ## Introduction
 We have evolved our [Omnibox Commands](https://github.com/MicrosoftEdge/DevTools/blob/main/explainers/Omnibox/explainer.md) experiment into the Command Palette, which is now available in Canary under a feature flag. We are excited to make DevTools and browser commands available to users in a streamlined and comprehensive platform. We've pulled some of the commands you can find in the [Command Menu]( https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, but why have these features in the browser? We know that users are often looking for ways to streamline their browsing or programming workflow, and the Command Palette enables users to do so without having to first open the Developer Tools or go down a long chain of settings or context menus. 
 
+![Command Palette](cp_main.png)
+
 To try it out today, head to [edge://flags](edge://flags) and enable the Command Palette experiment. Once it's enabled, use the keyboard shortcut `CTRL+SHIFT+SPACE` to turn it on. Let us know what you think; your suggestions just might be in the next version!
 
 ## Goals
@@ -18,12 +20,21 @@ To try it out today, head to [edge://flags](edge://flags) and enable the Command
 ## Features
 
 ### Home menu
+
+![Command Palette Search Bar](cp_search.png)
+
 When the feature opens, there will be a search bar with text that prompts the user to try using different keywords to search for their command. 
 
 ### DevTools
+
+![Command Palette DevTools Commands](cp_command.png)
+
 Typing `>` will pull up the available commands for DevTools. These commands were pulled from the DevTools Command Menu. Enable Device Mode was prioritized since we’ve had direct feedback for this functionality. Most of the commands are opening panels or changing the appearance or theme of the DevTools. To access the existing commands, you can find them in the [DevTools commands](#devtools-commands) section.
 
 ### Help
+
+![Command Palette Help Blurb](cp_help.png)
+
 If the user types a question mark `?`, we will display a short text in the drop-down menu area explaining the feature and a link to the documentation page. It will include all the command segments they can type in in case they missed it the first time they opened it.
 
 ### Search
