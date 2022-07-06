@@ -5,7 +5,7 @@ Authors:
  - [Erica Draud](https://github.com/erdraud), Program Manager
 
 ## Status of this feature
-This feature is a proposed experiment.
+Experiment has evolved and is now in Canary. See [Command Palette](https://github.com/MicrosoftEdge/DevTools/blob/main/explainers/CommandPalette/explainer.md) for more information.
 
 ## Introduction
 Earlier this year, the Chrome team released the [Commander]( https://bugs.chromium.org/p/chromium/issues/detail?id=1014639) as a text interface that provides a shortcut for common commands for browser users. The DevTools team used this as the framework for their Omnibar hackathon project. There’s some uncertainty around the usage and discoverability of the tool, so we’re starting with a flagged experiment.
