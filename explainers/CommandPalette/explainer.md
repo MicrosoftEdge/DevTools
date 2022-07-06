@@ -7,7 +7,7 @@ Authors:
 This feature is in Canary 105.
 
 ## Introduction
-We have evolved our [Omnibox Commands](https://github.com/MicrosoftEdge/DevTools/blob/main/explainers/Omnibox/explainer.md) experiment into the Command Palette, which is now available in Canary under a feature flag. We are excited to make DevTools and browser commands available to users in a streamlined and comprehensive platform. We've pulled some of the commands you can find in the [Command Menu]( https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, but why have these features in the browser? We know that users are often looking for ways to streamline their browsing or programming workflow, and the Command Palette enables users to do so without having to first open the Developer Tools or go down a long chain of settings or context menus. 
+We have evolved our [Omnibox Commands](https://github.com/MicrosoftEdge/DevTools/blob/main/explainers/Omnibox/explainer.md) experiment into the Command Palette, which is now available in Canary under a feature flag. We are excited to make DevTools and browser commands available to users in a streamlined and comprehensive platform. We've pulled some of the commands you can find in the [Command Menu]( https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, but why have these features in the browser? We know that users are often looking for ways to streamline their browsing or programming workflow, and the Command Palette enables users to do so without having to first open the Developer Tools or go down a long chain of settings or context menus. 
 
 ![Command Palette](cp_main.png)
 
