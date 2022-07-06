@@ -11,7 +11,7 @@ We have evolved our [Omnibox Commands](https://github.com/MicrosoftEdge/DevTools
 
 ![Command Palette](cp_main.png)
 
-To try it out today, head to [edge://flags](edge://flags) and enable the Command Palette experiment. Once it's enabled, use the keyboard shortcut `CTRL+SHIFT+SPACE` to turn it on. Let us know what you think; your suggestions just might be in the next version!
+To try it out today, head to [edge://flags](edge://flags) and enable the Command Palette experiment. Once it's enabled, use the keyboard shortcut `CTRL+SHIFT+SPACE` to turn it on. For more information, check out our [documentation](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/experimental-features/edge-command-palette). Let us know what you think; your suggestions just might be in the next version!
 
 ## Goals
   1.	To simplify DevTools users’ workflow and
