@@ -37,4 +37,4 @@ This proposal is to either offer an own landmarks tree with similar overlays in 
 1. Allow testers to verify the existence of landmarks in a web product in a fast and visual way.
 
 ## Feedback
-Have feedback? We want to hear it! *[Issue #123](link to issue announcing explainer, which will need to be added after first commit)* tracks community feedback on this explainer.
+Have feedback? We want to hear it! *[Issue #56](https://github.com/MicrosoftEdge/DevTools/issues/56)* tracks community feedback on this explainer.
