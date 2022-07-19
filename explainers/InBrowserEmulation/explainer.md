@@ -46,7 +46,7 @@ Firefox also has an emulation bar that is available independent of Developer too
 
 ## Discussion points
 
-The main question to answer now is one of discovery. How would users not familiar or interested in Developer Tools be able to find this functionality? 
+The main question to answer now is one of discovery. How would users not familiar or interested in Developer Tools be able to find this functionality?
 
 ## Feedback
-Have feedback? We want to hear it! *[Issue #123](link to issue announcing explainer, which will need to be added after first commit)* tracks community feedback on this explainer.
+Have feedback? We want to hear it! *[Issue #83](https://github.com/MicrosoftEdge/DevTools/issues/83)* tracks community feedback on this explainer.
