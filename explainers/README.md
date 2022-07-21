@@ -7,8 +7,8 @@ Explainers are documents focused on describing a user/ developer/ customer probl
 Currently, the following explainers are available to read and provide feedback:
 
 {%- for post in site.static_files -%}{% if post.path contains 'explainers' %}{% if post.path contains '.md' %}{% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}{% if subpath != "README.md" and subpath != "explainer-template.md" %}
-* [{{ subpath | handle }}](/DevTools{{ post.path | replace:'.md','' }}){% endif %}{% endif %}{% endfor %}{% endif %}{% endif %}{%- endfor -%}
-
+* [{{ subpath | handle }}](/DevTools{{ post.path | replace:'.md','' }}){% endif %}{% endif %}{% endfor %}{% endif %}{% endif %}
+{%- endfor -%}
 
 ## Providing feedback
 
