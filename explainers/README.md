@@ -9,7 +9,7 @@ Currently, the following explainers are available to read and provide feedback:
 <ul>{%- for file in site.static_files -%}
 {% if file.path contains 'explainer.md' %}
     {% assign items = file.path | split: "/" %}
-        <li><a href="/DevTools/{{ file.path | remove:'.md'}}">{{ items[-2] }}</a></li>
+        <li><a href="/DevTools{{ file.path | remove:'.md'}}">{{ items[-2] }}</a></li>
     {% endif %}
 {%- endfor -%}</ul>
 
