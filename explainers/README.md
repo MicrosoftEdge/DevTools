@@ -13,18 +13,5 @@ We appreciate you taking the time to offer feedback; it helps to improve the exp
 **[Start a new issue here](https://github.com/MicrosoftEdge/DevTools/issues/new/choose)**, or [join in the discussion](https://github.com/MicrosoftEdge/DevTools/issues) on existing issues. We also welcome PRs on the explainer documents themselves.
 
 <!--
-<ul>
-{%- for post in site.static_files -%}
-    {% if post.path contains 'explainers' %}
-    {% if post.path contains '.md' %}
-          <li><a href="{{ post.path }}">
-        {% assign names = post.path | split: "/" %}
-          {% for subpath in names %}
-            {% if forloop.index0 == 2 %}{{ subpath }}{% endif %}
-          {% endfor %}
-             </a></li>
-    {% endif %}
-    {% endif %}
-{%- endfor -%}
-</ul>
+{%- for post in site.static_files -%}{% if post.path contains 'explainers' %}{% if post.path contains '.md' %}* []({{ post.path }})<a href="">{% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}{{ subpath }}{% endif %}{% endfor %}</a></li>{% endif %}{% endif %}{%- endfor -%}
 -->
