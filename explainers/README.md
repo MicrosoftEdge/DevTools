@@ -17,11 +17,12 @@ We appreciate you taking the time to offer feedback; it helps to improve the exp
 {%- for post in site.static_files -%}
     {% if post.path contains 'explainers' %}
     {% if post.path contains '.md' %}
+          <li><a href="{{ post.path }}">
         {% assign names = post.path | split: "/" %}
           {% for subpath in names %}
-            {% if forloop.index0 == 1 %}{{ subpath }}{% endif %}
+            {% if forloop.index0 == 2 %}{{ subpath }}{% endif %}
           {% endfor %}
-      <li><a href="{{ post.path }}">{{ post.name }}</a></li>
+             </a></li>
     {% endif %}
     {% endif %}
 {%- endfor -%}
