@@ -17,9 +17,9 @@ We appreciate you taking the time to offer feedback; it helps to improve the exp
 {%- for post in site.static_files -%}
     {% if post.path contains 'explainers' %}
     {% if post.path contains '.md' %}
-        {% assign names = image.path | split: "/" %}
-          {% for subpath in imagepath %}
-            {% if forloop.index0 == 2 %}{{ subpath }}{% endif %}
+        {% assign names = post.path | split: "/" %}
+          {% for subpath in names %}
+            {% if forloop.index0 == 1 %}{{ subpath }}{% endif %}
           {% endfor %}
       <li><a href="{{ post.path }}">{{ post.name }}</a></li>
     {% endif %}
