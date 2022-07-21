@@ -6,7 +6,7 @@ Explainers are documents focused on describing a user/ developer/ customer probl
 
 <!-- 
 {%- for post in site.static_files -%}{% if post.path contains 'explainers' %}{% if post.path contains '.md' %}
-* {% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}[{{ subpath }}]{% endif %}{% endfor %}(/DevTools{{ post.path }}){% endif %}{% endif %}{%- endfor -%}
+* {% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}{% if subpath != "README.md" and subpath != "explainer-template.md" %}[{{ subpath }}]{% endif %}{% endif %}{% endfor %}(/DevTools{{ post.path }}){% endif %}{% endif %}{%- endfor -%}
 -->
 
 ## Providing feedback
