@@ -15,7 +15,7 @@ We appreciate you taking the time to offer feedback; it helps to improve the exp
 <!--
 <ul>
 {%- for post in site.static_files -%}
-  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+  <li><a href="{{ post.path }}">{{ post.name }}</a></li>
 {%- endfor -%}
 </ul>
 -->
