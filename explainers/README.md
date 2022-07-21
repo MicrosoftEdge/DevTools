@@ -11,3 +11,11 @@ We are looking for feedback! Are the stated problems relevant to you? How have t
 We appreciate you taking the time to offer feedback; it helps to improve the explainers, and validate the problem and solutions they describe.
 
 **[Start a new issue here](https://github.com/MicrosoftEdge/DevTools/issues/new/choose)**, or [join in the discussion](https://github.com/MicrosoftEdge/DevTools/issues) on existing issues. We also welcome PRs on the explainer documents themselves.
+
+<!--
+<ul>
+{%- for post in collections.all -%}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>
+-->
