@@ -8,6 +8,7 @@ Currently, the following explainers are available to read and provide feedback:
 
 <ul>{%- for post in site.static_files -%}
     {% if post.path contains 'explainers' and post.path contains '.md'%}
+        <!-- ={{ post.extname }}= -->
         {% assign names = post.path | split: "/" %}
         {% for subpath in names %}
             {% if forloop.index0 == 2 %}
