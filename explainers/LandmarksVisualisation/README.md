@@ -1,3 +1,3 @@
 ---
-permalink: explainer.md
+permalink: /DevTools/tree/main/explainers/LandmarksVisualisation/explainer
 ---
