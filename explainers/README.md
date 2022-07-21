@@ -6,7 +6,7 @@ Explainers are documents focused on describing a user/ developer/ customer probl
 
 <!-- 
 {%- for post in site.static_files -%}{% if post.path contains 'explainers' %}{% if post.path contains '.md' %}
-* {% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}{% if subpath != "README.md" and subpath != "explainer-template.md" %}[{{ subpath }}]{% endif %}{% endif %}{% endfor %}(/DevTools{{ post.path }}){% endif %}{% endif %}{%- endfor -%}
+* {% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}{% if subpath != "README.md" and subpath != "explainer-template.md" %}[{{ subpath }}](/DevTools{{ post.path }}){% endif %}{% endif %}{% endfor %}{% endif %}{% endif %}{%- endfor -%}
 -->
 
 ## Providing feedback
@@ -16,4 +16,3 @@ We are looking for feedback! Are the stated problems relevant to you? How have t
 We appreciate you taking the time to offer feedback; it helps to improve the explainers, and validate the problem and solutions they describe.
 
 **[Start a new issue here](https://github.com/MicrosoftEdge/DevTools/issues/new/choose)**, or [join in the discussion](https://github.com/MicrosoftEdge/DevTools/issues) on existing issues. We also welcome PRs on the explainer documents themselves.
-
