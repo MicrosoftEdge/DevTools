@@ -15,7 +15,11 @@ We appreciate you taking the time to offer feedback; it helps to improve the exp
 <!--
 <ul>
 {%- for post in site.static_files -%}
-  <li><a href="{{ post.path }}">{{ post.name }}</a></li>
+    {% if post.path contains 'explainer/' %}
+    {% if post.name contains '.md' %}
+      <li><a href="{{ post.path }}">{{ post.name }}</a></li>
+    {% endif %}
+    {% endif %}
 {%- endfor -%}
 </ul>
 -->
