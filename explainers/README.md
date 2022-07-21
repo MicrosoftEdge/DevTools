@@ -14,7 +14,12 @@ We appreciate you taking the time to offer feedback; it helps to improve the exp
 
 <!--
 <ul>
-{%- for post in collections.all -%}
+{%- for post in site.collections.explainers -%}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>
+<ul>
+{%- for post in collections.explainers -%}
   <li><a href="{{ post.url }}">{{ post.url }}</a></li>
 {%- endfor -%}
 </ul>
