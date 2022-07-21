@@ -8,7 +8,7 @@ Currently, the following explainers are available to read and provide feedback:
 
 <!--
 {%- for file in site.static_files -%}
-{% if file.extname == '' %}{{ file }}{% endif %}
+{{ file }}
 {%- endfor -%}
 -->
 
