@@ -4,8 +4,10 @@ This folder is home to the "explainers" and related documents originating from t
 
 Explainers are documents focused on describing a user/ developer/ customer problem (at a high level) and exploring potential solutions to the problem. These documents are starting points for engaging in discussion with you and other members of the community. Explainers should address their stated problems in clear and easy to understand language. Proposed solutions should be easy to follow and not too deep in technical details. When you read an explainer, we hope the stated problem is compelling and you can form an opinion for whether the proposed solution would address the problem.
 
+<!-- 
 {%- for post in site.static_files -%}{% if post.path contains 'explainers' %}{% if post.path contains '.md' %}
 * {% assign names = post.path | split: "/" %}{% for subpath in names %}{% if forloop.index0 == 2 %}[{{ subpath }}]{% endif %}{% endfor %}({{ post.path }}){% endif %}{% endif %}{%- endfor -%}
+-->
 
 ## Providing feedback
 
