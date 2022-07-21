@@ -6,9 +6,16 @@ Explainers are documents focused on describing a user/ developer/ customer probl
 
 Currently, the following explainers are available to read and provide feedback:
 
+<!--
+{%- for file in site.static_files -%}
+{% if file.extname == '' %}{{ file }}{% endif %}
+{%- endfor -%}
+-->
+
+
 <ul>{%- for post in site.static_files -%}
-    {% if post.path contains 'explainers' and post.path contains '.md'%}
         <!-- ={{ post.extname }}= -->
+    {% if post.path contains 'explainers' and post.path contains '.md'%}
         {% assign names = post.path | split: "/" %}
         {% for subpath in names %}
             {% if forloop.index0 == 2 %}
