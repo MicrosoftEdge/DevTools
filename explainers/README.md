@@ -6,27 +6,10 @@ Explainers are documents focused on describing a user/ developer/ customer probl
 
 Currently, the following explainers are available to read and provide feedback:
 
-<!--
 <ul>{%- for file in site.static_files -%}
 {% if file.path contains 'explainer.md' %}
     {% assign items = file.path | split: "/" %}
-        <li><a href="/DevTools/{{ post.path | remove:'.md'}}">{{ items[-2] }}</a></li>
-    {% endif %}
-{%- endfor -%}</ul>
--->
-
-
-<ul>{%- for post in site.static_files -%}
-        <!-- ={{ post.extname }}= -->
-    {% if post.path contains 'explainers' and post.path contains '.md'%}
-        {% assign names = post.path | split: "/" %}
-        {% for subpath in names %}
-            {% if forloop.index0 == 2 %}
-                {% if subpath != "README.md" and subpath != "explainer-template.md" %}
-                    <li><a href="/DevTools{{ post.path | remove:'.md'}}">{{ subpath | handle }}</a></li>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
+        <li><a href="/DevTools/{{ file.path | remove:'.md'}}">{{ items[-2] }}</a></li>
     {% endif %}
 {%- endfor -%}</ul>
 
