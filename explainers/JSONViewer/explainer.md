@@ -32,4 +32,4 @@ As JSON files are data structures and users want to drill down into the data and
 This functionality will trigger automatically when the browser navigates to a JSON file on the web or the user opens a local one.
 
 ## Feedback
-Have feedback? We want to hear it! *[Issue #123](link to issue announcing explainer, which will need to be added after first commit)* tracks community feedback on this explainer.
+Have feedback? We want to hear it! *[Issue #87](https://github.com/MicrosoftEdge/DevTools/issues/87)* tracks community feedback on this explainer.
