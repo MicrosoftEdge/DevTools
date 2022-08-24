@@ -1,8 +1,8 @@
 # DevTools: Feature for Sustainable Web Development 
 Author:
- - [Taylore Givens](https://github.com/tayloregivens ), Program Manager
+ - [Taylore Givens](https://github.com/tayloregivens), Program Manager
 ## Status of this feature
-This is a proposal for a new feature not yet in development. The team welcomes your feedback on this feature. Please [comment on this thread](https://github.com/MicrosoftEdge/DevTools/issues/26) to share your thoughts.
+This is a proposal for a new feature not yet in development. Please share your feedback [here](https://github.com/MicrosoftEdge/DevTools/issues/26).
 ## Definition
 sustainability of a web app – energy consumption of a web app
 ## Introduction
@@ -26,9 +26,9 @@ Once the user navigates to the Issues panel, any issue or category relevant to i
 Sustainability labeling will be enabled by default but can be disabled to reduce noisiness. Categories or issues labeled as sustainable would be prioritized in the ordering of categories and issues.
 
 ### Sustainability Tab
-The Sustainability tab will be a hub for sustainability-related metrics and provide insight about web app energy consumption, third parties' impact on performance, and best practices to improve sustainability.
+This tab will be a hub for sustainability-related metrics and provide insights about web app energy consumption, third parties' impact on performance, and best practices to improve sustainability.
 
-Some developers have suggested adding a website carbon calculator to DevTools, similar to the calculator on [Website Carbon](https://www.websitecarbon.com/). However, since these algorithms rely on inputting the byte size of the website and applying average ratios (i.e. kWh/byte and CO2 g/kWh) to get a carbon estimate, this methodology leaves many factors unaccounted for. Therefore, we propose displaying the carbon calculation as an estimate of carbon emitted from the *network transfer energy that goes into rendering a web app* rather than having the calculation represent the total carbon emissions associated with a web app. 
+Although developers requested a web app carbon calculator feature in DevTools, like [Website Carbon](https://www.websitecarbon.com/), these types of algorithms are underdeveloped and inaccurate because they often rely on inputting the byte size of a website and applying average ratios (i.e. kWh/byte and CO2 g/kWh) to get a carbon estimate. This type of algorithm is better suited to estimate the carbon emitted from the network transfer energy used to render a web app rather than estimate the total carbon emissions associated with a web app.
 
 #### Content and Usage
 The Sustainability tab will have three sections: Energy Consumption, Third Party Impact, and Best Practices. 
@@ -36,11 +36,13 @@ The Sustainability tab will have three sections: Energy Consumption, Third Party
 Energy Consumption
 
 > The Client-Device Energy and Network Transfer Energy sub-sections display metrics relevant to how much energy is used to render the web app on the client device and transfer it over the network to give the developer a sense of the energy consumed by the web app. 
-> Client-device energy
+> 
+> Client-Device Energy
 > -	“Client-Device Energy Score“ is out of 100 and is based on the CPU utilization and GPU utilization of the web app's initialization compared to the average web app. The score will vary slightly depending on the client's device due to different hardware. The score should be used as a guideline metric to assess how incremental code changes affect the client device energy.
 > -	CPU metrics such as the average CPU utilization and the live CPU utilization  
 > -	Link to Performance tab to further investigate CPU utilization
-> Network Transfer energy
+> 
+> Network Transfer Energy
 > -	Bytes transferred and number of network requests to give context to the amount of network activity the web app is generating
 > -	Use an open-source API, such as the [Green Web Foundation API] (https://www.thegreenwebfoundation.org/green-web-feed/), to estimate carbon emissions due to the energy required to transfer bytes over the network 
 
