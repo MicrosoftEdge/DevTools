@@ -2,7 +2,7 @@
 Author:
  - [Taylore Givens](https://github.com/tayloregivens ), Program Manager
 ## Status of this feature
-This is a proposal for a new feature not yet in development. The team welcomes your feedback on this feature. Please [comment on this thread](https://github.com/MicrosoftEdge/DevTools/issues/26) to share your thoughts.
+This is a proposal for a new feature not yet in development. The team welcomes your feedback on this feature. Please [comment on this thread](https://github.com/MicrosoftEdge/DevTools/issues/92) to share your thoughts.
 ## Definition
 sustainability of a web app – energy consumption of a web app
 ## Introduction
