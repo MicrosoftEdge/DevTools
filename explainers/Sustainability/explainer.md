@@ -2,7 +2,9 @@
 Author:
  - [Taylore Givens](https://github.com/tayloregivens), Program Manager
 ## Status of this feature
+
 Proposal for a feature not yet in development. Please share your feedback [here](https://github.com/MicrosoftEdge/DevTools/issues/92).
+
 ## Definition
 web app sustainability – energy consumption and type of energy (i.e. fossil fuels/renewable) used for a web app 
 
