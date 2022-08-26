@@ -28,7 +28,7 @@ Adding sustainability features to DevTools will raise awareness about the alarmi
 
 ### Summary 
 
--	Label existing issues in the Issues panel that are beneficial to sustainability and energy efficiency 
+- Label existing issues in the Issues panel that are beneficial to sustainability and energy efficiency 
 - Create a “Sustainability” tab that is a hub for sustainability-related metrics and provides insights about web app energy consumption, the type of energy used to power a web app, third parties' impact on performance and energy, and best practices to improve sustainability. 
 
 ### Sustainability Content Labeling in Issues Tab 
