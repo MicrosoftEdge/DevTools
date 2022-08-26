@@ -1,40 +1,55 @@
+
 # DevTools: Sustainable Web Development Feature
+
 Author:
  - [Taylore Givens](https://github.com/tayloregivens), Program Manager
+
 ## Status of this feature
 
 Proposal for a feature not yet in development. Please share your feedback [here](https://github.com/MicrosoftEdge/DevTools/issues/92).
 
 ## Definition
+
 web app sustainability – energy consumption and type of energy (i.e. fossil fuels/renewable) used for a web app 
 
 ## Introduction
+
 The carbon impact of the internet, including the hardware, software, and systems that go into creating it, produces about [3.7%]( https://www.bbc.com/future/article/20200305-why-your-internet-habits-are-not-as-clean-as-you-think) of global carbon emissions. This is similar to the percentage of global emissions from the [airline industry](https://www.bbc.com/future/article/20200305-why-your-internet-habits-are-not-as-clean-as-you-think). Developers and the public are becoming increasingly more aware and concerned about this issue. Developers are increasingly interested in understanding **what factors impact a web app's sustainability and how to improve it's sustainability.** Consequently, tools such as [Website Carbon](https://www.websitecarbon.com/), [Ecograder](https://ecograder.com/), [EcoPing](https://ecoping.earth/blog/core-web-vitals-and-sustainability), and [Beacon](https://digitalbeacon.co/) have been created to calculate the amount of CO2 a web app emits and provide recommendations to improve the sustainability of a web app.
+
 ## Goals
+
 Adding sustainability features to DevTools will raise awareness about the alarming carbon impact of web apps and the internet and help developers measure and improve the sustainability of their web apps by
 -	Providing proxy web app sustainability measurements
 -	Highlighting common factors that reduce the sustainability of web apps by showing or explaining how these factors decrease performance and increase energy consumption
 -	Indicating to developers what actions they’re currently taking, such as performance improvements, that also improve web app sustainability
 -	Educating developers on new actions they can take that are purely beneficial for sustainability.
+
 ## Solution
+
 ### Summary 
+
 -	Label existing issues in the Issues panel that are beneficial to sustainability and energy efficiency 
 - Create a “Sustainability” tab that is a hub for sustainability-related metrics and provides insights about web app energy consumption, the type of energy used to power a web app, third parties' impact on performance and energy, and best practices to improve sustainability. 
 
 ### Sustainability Content Labeling in Issues Tab 
+
 ![Issues Tab UI](explainer_Issues.jpg)
 Mockup is conceptual, not the final design
+
 #### Usage
+
 Once the user navigates to the Issues panel, any issue or category relevant to improving sustainability will have a sustainability label. Clicking this label will expand the category or issue dropdown window. The dropdown window will include a green banner describing how the category or issue is related to sustainability. The banner will also include a link to external documentation to learn more about why the category or issue is sustainability related. The banner will potentially also include a link to the DevTools Sustainability Tab (see next section).
 
 Sustainability labeling will be enabled by default but can be disabled with the checkbox to reduce noisiness. Categories or issues labeled as sustainable would be prioritized in the ordering of categories and issues.
 
 ### Sustainability Tab
+
 This tab will be a hub for sustainability-related metrics and provide insights about web app energy consumption, the type of energy used to power a web app, third parties' impact on performance and energy, and best practices to improve sustainability. 
 
 Although developers requested a web app carbon calculator feature in DevTools, like [Website Carbon](https://www.websitecarbon.com/), these types of algorithms are underdeveloped and inaccurate because they often rely on inputting the byte size of a website and applying average ratios (i.e. kWh/byte and CO2 g/kWh) to get a carbon estimate. This type of algorithm is **better suited to estimate the carbon emitted from the energy used to transfer a web app over the network** rather than estimate the total carbon emissions associated with a web app.
 
 #### Content and Usage
+
 The Sustainability tab has three sections: Sustainability Analysis, Third Party Impact, and Best Practices. 
 
 Sustainability Analysis
