@@ -15,14 +15,14 @@ A common use case of the web is to download images and videos displayed in web p
 
 There are numerous browser extensions and software packages that allow you to do grab and download media from web pages. Many come with a subscription and as this is a common demand there is also a fair share of malware in this area. As the media of any web site is already downloaded to the user's browser cache and DevTools can analyse the product's source for links to media this feature would make extensions like these obsolete and offer a safer option for users.
 
-All the functionality of the media explorer is available using existing tools in DevTools, but it needs developer skills to use them. 
+All the functionality of the media explorer is available using existing tools in DevTools, but it needs developer skills to use them.
 
 * The Network Tool allows you to access and download media in the current document.
 * The Elements and Console tool to analyse the structure of a document and get a list of all the media in the current document and links to more.
 
 The media explorer tool makes this easier for users not familiar with the Network tool or how web sites are structured.
 
-### Goals 
+### Goals
 
 The media explorer helps users to:
 
@@ -35,22 +35,18 @@ The media explorer helps users to:
 
 When opening DevTools on a document, the user can switch to the media explorer to see links to all the videos and images in the current document. 
 
-![The Media explorer tool inside Devtools]()
+![The Media explorer tool inside Devtools](media-explorer.png)
 
 Clicking any of these will open a preview of the media with information about size and availability. 
 
-![List of all the media found in the current document]()
-
-![Previewing an image in the media explorer]()
+![Previewing an image in the media explorer](media-explorer-preview.png)
 
 Users can download individual files or select more than one and get a zip file of all of them. 
 
-![Selecting several media types]()
-
 Alternatively, the Media Explorer could also be used as part of the side bar experience without any need to open developer tools.
 
-![The media explorer as an edge sidebar experience]()
+![The media explorer as an Edge Sidebar experience](media-explorer-sidebar.png)
 
 ## Feedback
 
-Have feedback? We want to hear it! *[Issue #123](link to issue announcing explainer, which will need to be added after first commit)* tracks community feedback on this explainer.
+Have feedback? We want to hear it!
