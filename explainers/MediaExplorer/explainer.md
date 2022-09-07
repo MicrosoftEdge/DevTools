@@ -50,3 +50,4 @@ Alternatively, the Media Explorer could also be used as part of the side bar exp
 ## Feedback
 
 Have feedback? We want to hear it!
+
