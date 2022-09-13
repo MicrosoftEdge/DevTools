@@ -17,7 +17,7 @@ When navigating to an HTML document, and selecting "view source" you get a colou
 
 ![View source showing HTML in a more detailed fashion than just a text display](view-source.png)
 
-We propose to replace tha basic JSON view with a colour-coded, collapsible and expandable one.
+We propose to replace that basic JSON view with a colour-coded, collapsible and expandable one.
 
 ![JSON in browser as a colour-coded, collapsible tree](json-viewer.gif)
 
