@@ -35,3 +35,7 @@ Have feedback? We want to hear it! *[Issue #123](link to issue announcing explai
 | Edge release | Changelog                                               |
 |--------------|---------------------------------------------------------|
 | *version.number* | *Description of changes.*                           |
+
+*(Optional: you can include YouTube videos by ID with the following syntax)*
+
+{% include youtube.html id="JLMbpiywVxQ" %}
