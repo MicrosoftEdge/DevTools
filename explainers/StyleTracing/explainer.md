@@ -80,7 +80,7 @@ We should provide web developers with resources to understand how to use this ne
 
 ## Feedback
 
-TODO
+Have feedback? We want to hear it! *[Issue #98](https://github.com/MicrosoftEdge/DevTools/issues/98)* tracks community feedback on this explainer.
 
 ## References
 
