@@ -1,7 +1,14 @@
 # DevTools: Selector Performance Tracing for Style Calculations
 
 Authors:
- - *[Brandon Walderman](https://github.com/bwalderman)*, Senior Software Engineer, Microsoft Edge
+
+* *[Brandon Walderman](https://github.com/bwalderman)*, Senior Software Engineer, Microsoft Edge.
+
+## Feedback
+
+Have feedback about this explainer? We want to hear it!
+
+**[Issue #98](https://github.com/MicrosoftEdge/DevTools/issues/98)** tracks community feedback on this explainer.
 
 ## Status of this feature
 
@@ -9,14 +16,14 @@ This is a proposal for a new feature that is not yet in development.
 
 ## Introduction
 
-Style recalculation is the process of iterating through DOM elements on a page, finding all of the CSS style rules that match a given element and then computing the element's actual style based on these rules.
+Style recalculation (or style recalc) is the process of iterating through DOM elements on a page, finding all of the CSS style rules that match a given element and then computing the element's actual style based on these rules.
 Style recalc needs to happen whenever the applicability of CSS rules may have changed. Some examples include:
 
-- Elements were inserted or removed from the DOM
-- An element's attributes (e.g. class, id) were changed
-- User input such as mouse move or focus change, which can affect `:hover` rules
+* Elements were inserted or removed from the DOM
+* An element's attributes (e.g. class, id) were changed
+* User input such as mouse move or focus change, which can affect `:hover` rules
 
-Style recalc can be an expensive operation and long-running style or layout operations can become performance bottlenecks that web developers need to debug.
+Style recalc can be an expensive operation and long-running recalc operations can become performance bottlenecks that web developers need to debug.
 
 The DevTools performance panel records a "Recalculate Style" trace event that shows when style recalculation occurs.
 
@@ -33,25 +40,26 @@ We'd like to offer web developers greater visibility into how time is being spen
 Developers can already see extra statistics from style recalc in the `edge://tracing` UI if the `"blink.debug"` tracing tag is enabled.
 The statistics show up as a `SelectorStats` trace event which includes a table of style rules with the following columns:
 
-- Elapsed CPU time spent evaluating the style rule (lower is better)
-- Number of "fast reject" elements that were cheap/efficient to eliminate from matching (higher portion of attempts is better)
-- Number of elements the Blink rendering engine attempted to match with the rule
-- Number of elements that were actually matched
-- CSS selector text
+* Elapsed CPU time spent evaluating the style rule (lower is better).
+* Number of "fast reject" elements that were cheap/efficient to eliminate from matching (higher portion of attempts is better).
+* Number of elements the Blink rendering engine attempted to match with the rule.
+* Number of elements that were actually matched.
+* CSS selector text.
 
 ![SelectorStats event viewed through edge://tracing](selector-stats.png)
 
+This information can be valuable to web developers, but the `edge://tracing` UI can be daunting, especially for beginners, and the `"blink.debug"` tag needs to be enabled first.
+
 ## Proposed Solution
 
-This information can be valuable to web developers, but the `edge://tracing` UI can be daunting, especially for beginners.
-The proposed solution is to display these same statistics in the details view for "Recalcuate Style" events in DevTools performance traces, where it will be more visible to web developers who are already familiar with the DevTools performance panel.
+The proposed solution is to display these same statistics in the details view for "Recalculate Style" events in DevTools performance traces, where it will be more visible to web developers who are already familiar with the DevTools Performance tool.
 
 Developers will be able to sort the table by any column, so that they can identify individual rules that take a longer time to process or have a high number of match attempts.
 If available, the CSS selector text will be enhanced with a link to the source location where the CSS rule is declared. This will let web developers quickly jump to the rule they are interested in so they can continue their investigation.
 
-Below is a mockup of the proposed design, with the new content  highlighted in red. Note that links to source locations are not currently shown in this mockup but would be rendered similar to other source links found in DevTools.
+Below is a mockup of the proposed design, with the new content highlighted in red. Note that links to source locations are not currently shown in this mockup but would be rendered similar to other source links found in DevTools.
 
-![The Recalculate Styles trace event details view with new selector statistics included](prototype-recalc-style-trace.png)
+![A DevTools mockup of the Recalculate Styles trace event details view with new selector statistics included](prototype-recalc-style-trace.png)
 
 ## Usage
 
@@ -74,15 +82,11 @@ When the checkbox is enabled, a table of selector statistics will be available i
 
 We should provide web developers with resources to understand how to use this new tool effectively. Some patterns in the data worth exploring:
 
-- Expensive unused selectors
-- Expensive broadly scoped selectors
-- Underutilized selectors (low match count / match attempts)
-
-## Feedback
-
-Have feedback? We want to hear it! *[Issue #98](https://github.com/MicrosoftEdge/DevTools/issues/98)* tracks community feedback on this explainer.
+* Expensive unused selectors.
+* Expensive broadly scoped selectors.
+* Underutilized selectors (low match count / match attempts).
 
 ## References
 
-1. https://web.dev/reduce-the-scope-and-complexity-of-style-calculations
-1. https://chromium-review.googlesource.com/c/chromium/src/+/3582806
+* Blog post: [Reduce the scope and complexity of style calculations](https://web.dev/reduce-the-scope-and-complexity-of-style-calculations)
+* Chromium commit: [Collect statistics on selector matching during style recalc](https://chromium-review.googlesource.com/c/chromium/src/+/3582806)
