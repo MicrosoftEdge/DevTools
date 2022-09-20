@@ -51,4 +51,5 @@ Upcoming features in delivery order:
 *  Open JSON in Network Console
 
 ## Feedback
+
 Have feedback? We want to hear it! *[Issue #87](https://github.com/MicrosoftEdge/DevTools/issues/87)* tracks community feedback on this explainer.
