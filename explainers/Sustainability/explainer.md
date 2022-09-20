@@ -63,7 +63,7 @@ Sustainability Analysis
 > >
 > >Network Transfer Energy
 > >-	Bytes transferred and number of network requests to give context to the amount of network activity the web app is generating
-> >-	Use an open-source API, such as the [Green Web Foundation API](https://github.com/thegreenwebfoundation/co2.js), to get a carbon estimate and display this value as the emissions from the energy required to transfer the web app bytes over the network.
+> >-	Use an open-source API, such as the [Green Web Foundation API](https://www.thegreenwebfoundation.org/co2-js/), to get a carbon estimate and display this value as the emissions from the energy required to transfer the web app bytes over the network.
 > >
 > Energy Type
 > > Display whether the web app runs on a green hosting service (i.e. service that runs on renewable energy) based on the Green Web Foundation's open source [dataset](https://www.thegreenwebfoundation.org/green-web-datasets/).
