@@ -49,4 +49,4 @@ Alternatively, the Media Explorer could also be used as part of the side bar exp
 
 ## Feedback
 
-Have feedback? We want to hear it! *[Issue #107](https://github.com/MicrosoftEdge/DevTools/issues/107)* tracks community feedback on this explainer.
+Have feedback? We want to hear it! *[Issue #107](https://github.com/MicrosoftEdge/DevTools/issues/103)* tracks community feedback on this explainer.
