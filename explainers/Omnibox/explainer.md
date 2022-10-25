@@ -12,7 +12,7 @@ Earlier this year, the Chrome team released the [Commander]( https://bugs.chromi
 
 ![Omnibox UI](omni.PNG)
 
-You’ll notice that many of the commands in this feature can be found in the [Command Menu]( https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, so why have these features in the address bar (from this point forward referred to as the omnibox)? We know that users would like a faster way to complete their tasks in DevTools, and the Omnibox Commands feature enables users to do so without having to first open the Developer Tools. Additionally, we’ve included features that are specific to the browser window: Edge internal urls and last viewed pages.
+You’ll notice that many of the commands in this feature can be found in the [Command Menu]( https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/command-menu/) in DevTools, so why have these features in the address bar (from this point forward referred to as the omnibox)? We know that users would like a faster way to complete their tasks in DevTools, and the Omnibox Commands feature enables users to do so without having to first open the Developer Tools. Additionally, we’ve included features that are specific to the browser window: Edge internal urls and last viewed pages.
 
 ## Goals
   1. To simplify DevTools users’ workflow and

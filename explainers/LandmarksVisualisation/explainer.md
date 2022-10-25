@@ -11,7 +11,7 @@ This is a proposal for a new feature that is not yet in development.
 
 ## Proposal
 
-Currently the only way to verify the existence of landmarks is via manual testing or by checking the  [Accessibility tree](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/accessibility-tab).
+Currently the only way to verify the existence of landmarks is via manual testing or by checking the  [Accessibility tree](https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/accessibility/accessibility-tab).
 
 ![Accessibility tree showing a main element](accessibility-main-element.png)
 
