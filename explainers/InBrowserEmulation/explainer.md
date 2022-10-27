@@ -15,7 +15,7 @@ Responsive design tooling and device emulation should be available in main brows
 
 The current implementation of [device emulation and responsive design tooling](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/device-mode/) requires DevTools to be open. This means that single screen users will have not much space in the browser to emulate high resolution devices without having to zoom out. 
 
-![Device emulation with developer tools open](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/media/device-mode-toggle-device-toolbar-highlighted.msft.png)
+![Device emulation with developer tools open](https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/media/device-mode-toggle-device-toolbar-highlighted.msft.png)
 
 Multi screen users can dock the developer tools to another screen, but will have a disconnect between using the elements picker and seeing the result on a different screen.
 
@@ -34,11 +34,11 @@ Enable all users to
 
 The [Microsoft Edge Extension for Visual Studio Code](https://aka.ms/devtools-for-code) currently features [a screencast with an own toolbar](https://docs.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension#device-and-state-emulation) that offers similar functionality.
 
-![Emulation toolbar in the extension screencast](https://docs.microsoft.com/en-us/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension-images/edge-for-code-screencast-v2.png)
+![Emulation toolbar in the extension screencast](https://learn.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension-images/edge-for-code-screencast-v2.png)
 
-![Emulation toolbar offering different devices to emulate](https://docs.microsoft.com/en-us/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension-images/edge-for-code-screencast-v2-emulating.png)
+![Emulation toolbar offering different devices to emulate](https://learn.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension-images/edge-for-code-screencast-v2-emulating.png)
 
-![Emulation toolbar offering different states to preview like dark and light mode](https://docs.microsoft.com/en-us/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension-images/edge-for-code-forced-colours.png)
+![Emulation toolbar offering different states to preview like dark and light mode](https://learn.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension-images/edge-for-code-forced-colours.png)
 
 Firefox also has an emulation bar that is available independent of Developer tools being open.
 
