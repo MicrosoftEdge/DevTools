@@ -18,4 +18,4 @@ jobs:
           ado_organization: 'microsoft'
           ado_project: 'Edge'
           ado_tags: 'DevToolsGitHubSync'
-          ado_area_path: 'Edge\Dev Experience\Developer Tools'
+          ado_area_path: 'Edge\Web Experience\Developer Tools'
