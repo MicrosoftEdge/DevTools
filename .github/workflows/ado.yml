@@ -9,7 +9,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: captainbrosset/github-actions-issue-to-work-item@simple-sync
+      - uses: MicrosoftEdge/action-issue-to-workitem@main
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
           github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
@@ -18,4 +18,4 @@ jobs:
           ado_organization: 'microsoft'
           ado_project: 'Edge'
           ado_tags: 'DevToolsGitHubSync'
-          ado_area_path: 'Edge\Dev Experience\Developer Tools'
+          ado_area_path: 'Edge\Web Experience\Developer Tools'
