@@ -8,6 +8,8 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - uses: MicrosoftEdge/action-issue-to-workitem@main
         env:
