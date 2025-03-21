@@ -7,7 +7,7 @@ Authors:
 
 ## Status of this feature
 
-This is available as of Microsoft Edge 79.
+An initial version of this feature has been available in Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
 
 ## Introduction
 
