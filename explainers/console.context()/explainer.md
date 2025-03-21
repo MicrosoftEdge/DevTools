@@ -11,7 +11,19 @@ An initial version of this feature has been available in Microsoft Edge starting
 
 ## Introduction
 
-While debugging a large application, filtering through many console log messages can be challenging. If a developer wanted to group messages together, they could use console.group(), but it's possible that other unrelated logs could be included. Alternatively, they could append a group name before log messages, but this is tedious and time-consuming.
+When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI component only, or by a database utility module only.
+
+Developers can use existing techniques that help with this use case, but these techniques have limitations:
+
+* Use the `console.group()` API to group related log messages together.
+
+  * However, this requires developers to always open the group before logging and then close it.
+  * Also, unrelated logs could also get included into groups.
+  * Finally, nested groups lead to nested log messages, which might not always be desirable if developers want to focus only on their component.
+
+* Prefix log messages with a name.
+
+  * This can be tedious and error prone. Developers can build their own console logging utility to handle this systematically.
 
 ## Goals
 The console.context() method provides a better solution for managing log messages. It returns a console instance that implements the console interface. Messages can be organized by logging to different contexts.
