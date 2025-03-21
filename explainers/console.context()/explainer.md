@@ -32,8 +32,9 @@ The `console.context(contextName)` method returns an instance of an object that 
 
 The main goals are:
 
-1. Improve the debugging process by making it easier and faster to navigate console log messages with context-based grouping.
+1. Improve the debugging process for large web applications, by making it easier and faster to navigate many console log messages thanks to context-based filtering.
 2. Improve the overall readability of the console.
+3. Make it easy for developers to create contextual loggers, without requiring them to write their own utility code.
 
 ## Use case in DevTools
 Developers can create multiple named contexts for different parts of their application. By logging messages to a named context, you can easily identify and follow the flow of a specific part of your application.
