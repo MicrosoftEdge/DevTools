@@ -26,7 +26,9 @@ Developers can use existing techniques that help with this use case, but these t
   * This can be tedious and error prone. Developers can build their own console logging utility to handle this systematically.
 
 ## Goals
-The console.context() method provides a better solution for managing log messages. It returns a console instance that implements the console interface. Messages can be organized by logging to different contexts.
+Our goal is to improve on the existing experimental `console.context()` method to provide a better solution for logging messages from a multi-component web app's code base, and more easily filter messages in the Console.
+
+The `console.context(contextName)` method returns an instance of an object that implements the same methods as the `console` namespace. Developers can create different contexts for the different parts of their apps. Messages logged from a context object _belong_ to the context and can be filtered in the Console tool, currently by typing `context:contextName` in the Console's search field.
 
 The main goals are:
 
