@@ -1,92 +1,127 @@
-# DevTools: console.context()
+# DevTools contextual logging with `console.context()`
 
 Authors:
+
  - *[Leah Tu](https://github.com/leahmsft)*, Microsoft Edge
  - *[Patrick Brosset](https://github.com/captainbrosset)*, Microsoft Edge
 
-
 ## Status of this feature
 
-An initial version of this feature has been available in Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
+An initial version of this feature has been available in Chromium, and Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
 
 ## Introduction
 
-When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI component only, or by a database utility module only.
+When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI component only, or by a database utility module only. Other times, developers want to see all logs, but quickly identify which components of their app they belong to.
 
 Developers can use existing techniques that help with this use case, but these techniques have limitations:
 
-* Use the `console.group()` API to group related log messages together.
+* Use the `console.group()` API to group related log messages together. However:
 
-  * However, this requires developers to always open the group before logging and then close it.
-  * Also, unrelated logs could also get included into groups.
-  * Finally, nested groups lead to nested log messages, which might not always be desirable if developers want to focus only on their component.
+  * This requires developers to always open a group before logging and then close it.
+  * Unrelated logs can inadvertently get included into groups.
+  * Nested groups lead to visually nested log messages in the Console, which might not always be desirable if developers want to focus only on their component.
 
 * Prefix log messages with a name.
 
-  * This can be tedious and error prone. Developers can build their own console logging utility to handle this systematically.
+  * This can be tedious and error prone. Developers can build their own console logging utility to handle this systematically, which requires extra work and maintenance.
 
 ## Goals
-Our goal is to improve on the existing experimental `console.context()` method to provide a better solution for logging messages from a multi-component web app's code base, and more easily filter messages in the Console.
+
+Our goal is to improve on the experimental `console.context()` method, which exists in Chromium, to provide a better solution for logging messages from a multi-component web app's code base, and more easily filter messages in the Console.
 
 The `console.context(contextName)` method returns an instance of an object that implements the same methods as the `console` namespace. Developers can create different contexts for the different parts of their apps. Messages logged from a context object _belong_ to the context and can be filtered in the Console tool, currently by typing `context:contextName` in the Console's search field.
 
-The main goals are:
+Our goals are to:
 
 1. Improve the debugging process for large web applications, by making it easier and faster to navigate many console log messages thanks to context-based filtering.
-2. Improve the overall readability of the console.
+2. Improve the overall readability of the console, by making logs that belong to different logging contexts easier to distinguish visually.
 3. Make it easy for developers to create contextual loggers, without requiring them to write their own utility code.
 
-## Use case in DevTools
-Developers can create multiple named contexts for different parts of their application. By logging messages to a named context, you can easily identify and follow the flow of a specific part of your application.
+## Use cases
+
+This proposal addresses three main use cases:
+
+1. Emit logs from a specific context of an application.
+2. Filter the output of the Console tool to show only the logs from a specific context.
+3. Distinguish logs from different contexts visually.
 
 ### Current experience in Chromium
-In the DevTools Console panel, you can filter messages based on the name of the context. If a colour is specified for a context, the log messages will appear in that colour improving the visual clarity of messages from different contexts.
 
-1. Create a specific logger instance for a part of your app:
+The experimental `console.context()` method is already available in Chromium, and somewhat addresses the use cases above:
 
-`const myComponentLogger = console.context("name-of-my-component");`
+1. Emit logs from a specific context of an application.
 
-2. Then log messages as normal, using your new logger:
+   Developers can create different loggers for specific contexts of their application by using the `console.context()` method. Developers can then use the returned logger to log messages as normal.
 
-`myComponentLogger.log("This is a log message from my component");`
+   ```javascript
+   const myLogger = console.context("name-of-my-context");
+   myLogger.log("This is a log message from my context");
+   myLogger.warn("This is a warning message from my context");
+   ```
 
-`myComponentLogger.warn("This is a warning message from my component");`
+   ✅ **The existing Chromium experience addresses this use case.**
 
-3. You could also give your log messages a colour to colour-code them for different loggers:
+1. Filter the output of the Console tool to show only the logs from a specific context.
 
-`myComponentLogger.log("%cThis is a log message from my component", "background-color:lemonchiffon;");`
+   Developers can filter the Console tool by typing `context:name-of-my-context` in the Console's search field. This will show only the logs that were emitted from that context.
 
-Here is what the Console tool might look like, with the colour-coded logs from all of the components of the app:
+   ![DevTools Console panel with filtered context logs](console-with-context-logs-filtered.png)
 
-![DevTools Console panel with context logs](console-with-context-logs.png)
+   ⚠️ **The existing Chromium experience somewhat addresses this use case, but requires developers to know the search syntax, and remember the context name.**
 
-Here is what the Console tool would show, once the logs have been filtered by context, to show only the logs from one component:
+1. Distinguish logs from different contexts visually.
 
-![DevTools Console panel with filtered context logs](console-with-context-logs-filtered.png)
+   Developers can use `%c` log formatting to set a color for each log message in a given context, and write some code to prefix the log messages with the context name. For example:
+
+   ```javascript
+   const myLogger = console.context("name-of-my-context");
+   myLogger.log("%c[MY CONTEXT] This is a log message from my component", "background-color:lemonchiffon;");
+   ```
+
+   ❌ **The existing Chromium experience does not address this use case. Extra effort and code is required for each and every message being logged.**
 
 ### Proposed improvements
-This is a useful feature, but it could be improved by making changes to the method and adding in new functionality in the DevTools Console to support this.
 
-For `console.context()`,
+We're proposing to improve the existing Chromium experience by making changes to the `console.context()` method and  by adding in new functionality in the Console tool.
 
-**1. Add a second, optional `color` argument to `console.context()` to accept a colour.**
+#### Changes to the `console.context()` method
 
-Adding a colour to each logger instance will help developers easily find messages at a glace in the Console, without needing to filter other messages. It's possible to add colour to a single log message today. However, in order to colour-code a logger's messages, it would need to be specified for every message to that logger. This is tedious and error prone since it involves not only logging individual messages but also remembering which colour is for each logger. Giving developers the ability to specify a colour to the logger itself will solve this issue and make it more efficient.
+1. Add a second, optional `color` argument to `console.context()`.
 
-If a `color` isn't given, then we should assign a random color that hasn't been used yet when a new logger instance is created. This will ensure that all context log messages are easily distinguishable.
+   Syntax examples:
 
-For the DevTools console UI,
+   ```javascript
+   const myLogger = console.context("app");
+   const myColoredLogger = console.context("storage", { color: "lemonchiffon" });
+   ```
 
-**1. Add a new filter option for contexts**
+   Adding a color to a contextual logger instance will help developers easily find messages at a glace in the Console tool, without needing to filter other messages.
+   
+   Giving developers the ability to specify a color at the logger level makes it easier, faster, and less error prone than what the current experience requires.
 
-It's possible to filter for context log messages by searching `context:context-name`, but this requires extra effort. To make it more user-friendly, we will add context names to the Console sidebar, so that you can simply click on a context and the Console will filter out everything else.
+   If no color is provided, we propose assigning a random color that hasn't been used yet when the new logger instance is created. This will ensure that all context log messages are easily distinguishable.
 
-If you log messages to a logger with `error()`, `warn()`, `info()`, `debug()`, then those will be displayed in a dropdown under the context name with a count.
+#### Changes to the Console tool UI
 
-![DevTools Console panel sidebar with context filters](console-sidebar-with-context-filters.png)
+1. Display context badges next to messages logged from a context.
 
-**2. Add badges to contextual log messages**
+   Since all contexts will have a name and an assigned color (whether randomly or manually assigned), we propose to display these information in the form of a badge, next to logged messages.
+   
+   This will make messages easy to read and help developers see the context for any message at a glance, even without needing to filter messages for their context.
 
-Since all contexts will have an assigned colour, we will display the context name and its colour on a badge on all of its messages. This will keep messages easy to read and help developers see the context for any message at a glace.
+   ![DevTools Console panel with badges on context logs](console-with-context-logs-badges.png)
 
-![DevTools Console panel with badges on context logs](console-with-context-logs-badges.png)
+   Displaying the color of the context in a badge, rather than as the message background color, has benefits too:
+
+   * Messages may be logs, warnings, or errors, and therefore already have a background color that's important to keep.
+   * Messages can be formatted with `%c` to have a custom background color, and we don't want to override that.
+
+1. Add a new filter option for contexts.
+
+   We propose to keep the existing `context:context-name` search syntax, but also add new filtering UI in the Console sidebar.
+   
+   To make filtering for contextual logs more user-friendly, we propose adding context names to the Console sidebar, so that developers can easily click on a context to filter out everything else.
+
+   ![DevTools Console panel sidebar with context filters](console-sidebar-with-context-filters.png)
+
+   As seen above, one category is created in the sidebar for each context. Categories can also be expanded to show the logs from various levels. This way, developers can optionally filter the logs emitted when using the `error()`, `warn()`, `info()`, and `debug()` methods.
