@@ -9,6 +9,16 @@ Authors:
 
 An initial version of this feature has been available in Chromium, and Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
 
+## Participate
+- [Issue tracker](https://github.com/whatwg/console/issues/193)
+- 
+- ## Table of Contents [if the explainer is longer than one printed page]
+
+[You can generate a Table of Contents for markdown documents using a tool like [doctoc](https://github.com/thlorenz/doctoc).]
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Introduction
 
 When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI component only, or by a database utility module only. Other times, developers want to see all logs, but quickly identify which components of their app they belong to.
@@ -25,6 +35,11 @@ Developers can use existing techniques that help with this use case, but these t
 
   * This can be tedious and error prone. Developers can build their own console logging utility to handle this systematically, which requires extra work and maintenance.
 
+## User-Facing Problem
+
+[What is the **end-user need** which this project aims to address?]
+
+
 ## Goals
 
 Our goal is to improve on the experimental `console.context()` method, which exists in Chromium, to provide a better solution for logging messages from a multi-component web app's code base, and more easily filter messages in the Console.
@@ -37,7 +52,20 @@ Our goals are to:
 2. Improve the overall readability of the console, by making logs that belong to different logging contexts easier to distinguish visually.
 3. Make it easy for developers to create contextual loggers, without requiring them to write their own utility code.
 
-## Use cases
+### Non-goals
+
+[If there are "adjacent" goals which may appear to be in scope but aren't,
+enumerate them here. This section may be fleshed out as your design progresses and you encounter necessary technical and other trade-offs.]
+
+## User research
+
+[If any user research has been conducted to inform the design choices presented,
+discuss the process and findings.
+We strongly encourage that API designers consider conducting user research to
+verify that their designs meet user needs and iterate on them,
+though we understand this is not always feasible.]
+
+## Proposed approach
 
 This proposal addresses three main use cases:
 
@@ -125,3 +153,60 @@ We're proposing to improve the existing Chromium experience by making changes to
    ![DevTools Console panel sidebar with context filters](console-sidebar-with-context-filters.png)
 
    As seen above, one category is created in the sidebar for each context. Categories can also be expanded to show the logs from various levels. This way, developers can optionally filter the logs emitted when using the `error()`, `warn()`, `info()`, and `debug()` methods.
+
+## Alternatives considered
+
+[This should include as many alternatives as you can,
+from high level architectural decisions down to alternative naming choices.]
+
+### [Alternative 1]
+
+[Describe an alternative which was considered,
+and why you decided against it.
+This alternative may have been part of a prior proposal in the same area,
+or it may be new.
+If you did any research in making this decision, discuss it here.]
+
+### [Alternative 2]
+
+[You may not have decided about some alternatives.
+Describe them as open questions here, and adjust the description once you make a decision.]
+
+### [Alternative 3]
+
+[etc.]
+
+## Accessibility, Privacy, and Security Considerations
+
+[Highlight any accessibility, security, and privacy implications that have been taken into account
+during the design process.]
+
+## Stakeholder Feedback / Opposition
+
+[Implementors and other stakeholders may already have publicly stated positions on this work. If you can, list them here with links to evidence as appropriate.]
+
+- [Implementor A] : Positive
+- [Stakeholder B] : No signals
+- [Implementor C] : Negative
+
+[If appropriate, explain the reasons given by other implementors for their concerns.]
+
+## References & acknowledgements
+
+[Your design will change and be informed by many people; acknowledge them in an ongoing way! It helps build community and, as we only get by through the contributions of many, is only fair.]
+
+[Unless you have a specific reason not to, these should be in alphabetical order.]
+
+Many thanks for valuable feedback and advice from:
+
+- [Person 1]
+- [Person 2]
+- [etc.]
+
+Thanks to the following proposals, projects, libraries, frameworks, and languages
+for their work on similar problems that influenced this proposal.
+
+- [Framework 1]
+- [Project 2]
+- [Proposal 3]
+- [etc.]
