@@ -1,18 +1,19 @@
 # DevTools contextual logging with `console.context()`
 
-Authors:
+## Authors:
 
  - *[Leah Tu](https://github.com/leahmsft)*, Microsoft Edge
  - *[Patrick Brosset](https://github.com/captainbrosset)*, Microsoft Edge
 
-## Status of this feature
-
-An initial version of this feature has been available in Chromium, and Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
-
 ## Participate
 - [Issue tracker](https://github.com/whatwg/console/issues/193)
-- 
-- ## Table of Contents [if the explainer is longer than one printed page]
+
+## Status of this feature
+
+An initial version of this feature has been available in [Chromium](https://chromium-review.googlesource.com/c/v8/v8/+/522128), and Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
+
+ 
+## Table of Contents [if the explainer is longer than one printed page]
 
 [You can generate a Table of Contents for markdown documents using a tool like [doctoc](https://github.com/thlorenz/doctoc).]
 
@@ -20,6 +21,11 @@ An initial version of this feature has been available in Chromium, and Microsoft
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
+
+This project aims to enhance the debugging process for large web applications by improving Chromium's `console.context()` method and enhancing filter options in the Console UI. This method allows developers to define logging contexts, making it easier to filter and identify log messages. Our improvements include introducing an optional color argument to `console.context()` for quick visual differentiation and updating the Console UI with context badges and additional filter support. These changes will make debugging momre efficient, improve log readability, and simplify contextual logger cration.
+
+
+## User-Facing Problem
 
 When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI component only, or by a database utility module only. Other times, developers want to see all logs, but quickly identify which components of their app they belong to.
 
@@ -35,11 +41,6 @@ Developers can use existing techniques that help with this use case, but these t
 
   * This can be tedious and error prone. Developers can build their own console logging utility to handle this systematically, which requires extra work and maintenance.
 
-## User-Facing Problem
-
-[What is the **end-user need** which this project aims to address?]
-
-
 ## Goals
 
 Our goal is to improve on the experimental `console.context()` method, which exists in Chromium, to provide a better solution for logging messages from a multi-component web app's code base, and more easily filter messages in the Console.
@@ -54,8 +55,7 @@ Our goals are to:
 
 ### Non-goals
 
-[If there are "adjacent" goals which may appear to be in scope but aren't,
-enumerate them here. This section may be fleshed out as your design progresses and you encounter necessary technical and other trade-offs.]
+We are not proposing to change the current method for applying a color to individual log messages. This capability will still work for log messages to a context.
 
 ## User research
 
@@ -183,13 +183,7 @@ during the design process.]
 
 ## Stakeholder Feedback / Opposition
 
-[Implementors and other stakeholders may already have publicly stated positions on this work. If you can, list them here with links to evidence as appropriate.]
-
-- [Implementor A] : Positive
-- [Stakeholder B] : No signals
-- [Implementor C] : Negative
-
-[If appropriate, explain the reasons given by other implementors for their concerns.]
+- Mozilla : [Positive. Agreed to make the spec changes.](https://github.com/whatwg/console/issues/193#issuecomment-2690631598)
 
 ## References & acknowledgements
 
