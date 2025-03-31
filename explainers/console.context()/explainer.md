@@ -1,37 +1,48 @@
 # DevTools contextual logging with `console.context()`
 
-## Authors:
+## Authors
 
  - *[Leah Tu](https://github.com/leahmsft)*, Microsoft Edge
  - *[Patrick Brosset](https://github.com/captainbrosset)*, Microsoft Edge
 
 ## Participate
-- [Issue tracker](https://github.com/whatwg/console/issues/193)
+
+- For feedback about this explainer, open [an issue on the MicrosoftEdge/DevTools repo](https://github.com/MicrosoftEdge/DevTools/issues).
+- The expected venue for this is the [Console spec](https://console.spec.whatwg.org/). For feedback about the spec changes, see [console.context()](https://github.com/whatwg/console/issues/193) on the spec's repo.
+
+## Table of Contents [if the explainer is longer than one printed page]
+
+* [Status of this feature](#status-of-this-feature)
+* [Introduction](#introduction)
+* [User-facing problem](#user-facing-problem)
+* [Goals](#goals)
+   * [Non-goals](#non-goals)
+* [User research](#user-research)
+* [Proposed approach](#proposed-approach)
+  * [Current experience in Chromium](#current-experience-in-chromium)
+  * [Proposed improvements](#proposed-improvements)
+    * [Changes to the `console.context()` method](#changes-to-the-consolecontext-method)
+    * [Changes to the Console tool UI](#changes-to-the-console-tool-ui)
+* [Alternatives considered](#alternatives-considered)
+* [Accessibility, privacy, and security considerations](#accessibility-privacy-and-security-considerations)
+* [Stakeholder feedback / opposition](#stakeholder-feedback--opposition)
+* [References & acknowledgements](#references--acknowledgements)
 
 ## Status of this feature
 
-An initial version of this feature has been available in [Chromium](https://chromium-review.googlesource.com/c/v8/v8/+/522128), and Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
-
- 
-## Table of Contents [if the explainer is longer than one printed page]
-
-[You can generate a Table of Contents for markdown documents using a tool like [doctoc](https://github.com/thlorenz/doctoc).]
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+An initial version of this feature has been available in [Chromium](https://chromium-review.googlesource.com/c/v8/v8/+/522128) since 2017, and Microsoft Edge starting with version 79. This explainer proposes improvements to the feature.
 
 ## Introduction
 
-This project aims to enhance the debugging process for large web applications by improving Chromium's `console.context()` method and enhancing filter options in the Console UI. This method allows developers to define logging contexts, making it easier to filter and identify log messages. Our improvements include introducing an optional color argument to `console.context()` for quick visual differentiation and updating the Console UI with context badges and additional filter support. These changes will make debugging momre efficient, improve log readability, and simplify contextual logger cration.
+This project aims to enhance the debugging process for large web applications by improving Chromium's `console.context()` method and enhancing filter options in the Console UI. This method allows developers to define logging contexts, making it easier to filter and identify log messages. Our improvements include introducing an optional color argument to `console.context()` for quick visual differentiation and updating the Console UI with context badges and additional filter support. These changes will make debugging more efficient, improve log readability, and simplify contextual logger cration.
 
+## User-facing problem
 
-## User-Facing Problem
-
-When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI component only, or by a database utility module only. Other times, developers want to see all logs, but quickly identify which components of their app they belong to.
+When debugging web applications with large code bases having many components from many different teams, it can be challenging for developers to filter through the many log messages that appear in the Console tool and find the relevant ones. Often, developers want to filter the messages so that only the ones from the component they're working on appear. For example, a developer might want to see the logs that are emitted by a given UI control only, or by a database utility module only. Other times, developers want to see all logs, but quickly identify which components of their app they belong to.
 
 Developers can use existing techniques that help with this use case, but these techniques have limitations:
 
-* Use the `console.group()` API to group related log messages together. However:
+* Use the `console.group()` API to group log messages together. However:
 
   * This requires developers to always open a group before logging and then close it.
   * Unrelated logs can inadvertently get included into groups.
@@ -45,7 +56,7 @@ Developers can use existing techniques that help with this use case, but these t
 
 Our goal is to improve on the experimental `console.context()` method, which exists in Chromium, to provide a better solution for logging messages from a multi-component web app's code base, and more easily filter messages in the Console.
 
-The `console.context(contextName)` method returns an instance of an object that implements the same methods as the `console` namespace. Developers can create different contexts for the different parts of their apps. Messages logged from a context object _belong_ to the context and can be filtered in the Console tool, currently by typing `context:contextName` in the Console's search field.
+The `console.context(contextName)` method returns an instance of an object that implements the same methods as [the `console` namespace](https://console.spec.whatwg.org/#console-namespace). Developers can create different contexts for the different parts of their apps. Messages logged from a context object _belong_ to the context and can be filtered in the Console tool, currently by typing `context:contextName` in the Console's search field.
 
 Our goals are to:
 
@@ -75,7 +86,7 @@ This proposal addresses three main use cases:
 
 ### Current experience in Chromium
 
-The experimental `console.context()` method is already available in Chromium, and somewhat addresses the use cases above:
+The experimental `console.context()` method is already available in Chromium, and addresses some of the above use cases, to some extend. The following items describe how well each use case is currently addressed:
 
 1. Emit logs from a specific context of an application.
 
@@ -87,7 +98,7 @@ The experimental `console.context()` method is already available in Chromium, an
    myLogger.warn("This is a warning message from my context");
    ```
 
-   ✅ **The existing Chromium experience addresses this use case.**
+   ✅ **This use case is addressed.**
 
 1. Filter the output of the Console tool to show only the logs from a specific context.
 
@@ -95,18 +106,18 @@ The experimental `console.context()` method is already available in Chromium, an
 
    ![DevTools Console panel with filtered context logs](console-with-context-logs-filtered.png)
 
-   ⚠️ **The existing Chromium experience somewhat addresses this use case, but requires developers to know the search syntax, and remember the context name.**
+   ⚠️ **This use case is partially addressed. Developers must know about the search syntax, and remember context names. The filtering UI is not user-friendly.**
 
 1. Distinguish logs from different contexts visually.
 
-   Developers can use `%c` log formatting to set a color for each log message in a given context, and write some code to prefix the log messages with the context name. For example:
+   Developers can use `%c` log formatting to set a color for each log message in a given context, and/or write some code to prefix the log messages with the context name. For example:
 
    ```javascript
    const myLogger = console.context("name-of-my-context");
    myLogger.log("%c[MY CONTEXT] This is a log message from my component", "background-color:lemonchiffon;");
    ```
 
-   ❌ **The existing Chromium experience does not address this use case. Extra effort and code is required for each and every message being logged.**
+   ❌ **This use case is not addressed. Extra effort and code is required for each and every message being logged.**
 
 ### Proposed improvements
 
@@ -123,11 +134,14 @@ We're proposing to improve the existing Chromium experience by making changes to
    const myColoredLogger = console.context("storage", { color: "lemonchiffon" });
    ```
 
-   Adding a color to a contextual logger instance will help developers easily find messages at a glace in the Console tool, without needing to filter other messages.
+   Adding a color to a contextual logger instance will help developers easily find messages at a glace in the Console tool, without needing to filter out other messages.
    
    Giving developers the ability to specify a color at the logger level makes it easier, faster, and less error prone than what the current experience requires.
 
    If no color is provided, we propose assigning a random color that hasn't been used yet when the new logger instance is created. This will ensure that all context log messages are easily distinguishable.
+
+   > [!NOTE]  
+   > See https://github.com/whatwg/console/issues/193#issuecomment-2760521319 for a discussion about accepting `%c` formatting instead.
 
 #### Changes to the Console tool UI
 
@@ -172,35 +186,22 @@ If you did any research in making this decision, discuss it here.]
 [You may not have decided about some alternatives.
 Describe them as open questions here, and adjust the description once you make a decision.]
 
-### [Alternative 3]
+## Accessibility, privacy, and security considerations
 
-[etc.]
+We don't expect particular privacy or security implications for this feature. Console contexts are strings that do not expose private or sensitive information in any more ways than log messages do. They also not open new attack vectors that console messages do not already have.
 
-## Accessibility, Privacy, and Security Considerations
+Low color contrast in a context badge can lead to accessibility issues:
 
-[Highlight any accessibility, security, and privacy implications that have been taken into account
-during the design process.]
+* For user-provided colors, we are not planning on addressing the potential issue. The Console tool will not change the color that were provided by the user. This is similar to how the tool currently does not change the color of messages that are logged with `%c` formatting. Users are expected to provide colors that are accessible.
+* For colors provided by the Console tool, when the user does not provide a color, we will ensure that the random color combination is accessible. **TODO: needs more details.**
 
-## Stakeholder Feedback / Opposition
+## Stakeholder feedback / opposition
 
-- Mozilla : [Positive. Agreed to make the spec changes.](https://github.com/whatwg/console/issues/193#issuecomment-2690631598)
+- Mozilla: Positive. [Bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1948870), [specification discussion](https://github.com/whatwg/console/issues/193#issuecomment-2690631598).
+- Web developers: Positive. [LinkedIn post from Stefan Judis which got 277 reactions](https://www.linkedin.com/posts/stefan-judis_if-youre-a-log-debugging-person-arent-activity-7297262562084081664-WPiy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABm63wB9NIFWK7Z8l7ky8iGh6Y2nJRE5dY).
 
 ## References & acknowledgements
 
-[Your design will change and be informed by many people; acknowledge them in an ongoing way! It helps build community and, as we only get by through the contributions of many, is only fair.]
-
-[Unless you have a specific reason not to, these should be in alphabetical order.]
-
-Many thanks for valuable feedback and advice from:
-
-- [Person 1]
-- [Person 2]
-- [etc.]
-
-Thanks to the following proposals, projects, libraries, frameworks, and languages
-for their work on similar problems that influenced this proposal.
-
-- [Framework 1]
-- [Project 2]
-- [Proposal 3]
-- [etc.]
+* Thank you to Alexey Kozyatinskiy, Dmitry Gozman, Jakob Linke, Igor Sheludko, and Pavel Feldman for writing and reviewing the code for the initial version of `console.context()` in V8 ([Chromium CL](https://chromium-review.googlesource.com/c/v8/v8/+/522128)).
+* Thank you to Nicolas Chevobbe, from Firefox DevTools, for iterating with us on the design of the API in the [Console spec discussion](https://github.com/whatwg/console/issues/193).
+* Many thanks for valuable feedback and advice from: Sam Fortiner<!-- Add more names here as we get more feedback -->.
