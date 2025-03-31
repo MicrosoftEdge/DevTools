@@ -10,7 +10,7 @@
 - For feedback about this explainer, open [an issue on the MicrosoftEdge/DevTools repo](https://github.com/MicrosoftEdge/DevTools/issues).
 - The expected venue for this is the [Console spec](https://console.spec.whatwg.org/). For feedback about the spec changes, see [console.context()](https://github.com/whatwg/console/issues/193) on the spec's repo.
 
-## Table of Contents [if the explainer is longer than one printed page]
+## Table of Contents
 
 * [Status of this feature](#status-of-this-feature)
 * [Introduction](#introduction)
