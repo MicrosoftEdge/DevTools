@@ -17,7 +17,6 @@
 * [User-facing problem](#user-facing-problem)
 * [Goals](#goals)
    * [Non-goals](#non-goals)
-* [User research](#user-research)
 * [Proposed approach](#proposed-approach)
   * [Current experience in Chromium](#current-experience-in-chromium)
   * [Proposed improvements](#proposed-improvements)
@@ -67,14 +66,6 @@ Our goals are to:
 ### Non-goals
 
 We are not proposing to change the current method for applying a color to individual log messages. This capability will still work for log messages to a context.
-
-## User research
-
-[If any user research has been conducted to inform the design choices presented,
-discuss the process and findings.
-We strongly encourage that API designers consider conducting user research to
-verify that their designs meet user needs and iterate on them,
-though we understand this is not always feasible.]
 
 ## Proposed approach
 
