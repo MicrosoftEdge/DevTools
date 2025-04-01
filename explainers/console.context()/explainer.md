@@ -140,9 +140,6 @@ We're proposing to improve the existing Chromium experience by making changes to
 
    If no color is provided, we propose assigning a random color that hasn't been used yet when the new logger instance is created. This will ensure that all context log messages are easily distinguishable.
 
-   > [!NOTE]  
-   > See https://github.com/whatwg/console/issues/193#issuecomment-2760521319 for a discussion about accepting `%c` formatting instead.
-
 #### Changes to the Console tool UI
 
 1. Display context badges next to messages logged from a context.
@@ -170,21 +167,26 @@ We're proposing to improve the existing Chromium experience by making changes to
 
 ## Alternatives considered
 
-[This should include as many alternatives as you can,
-from high level architectural decisions down to alternative naming choices.]
+We have a few options for color customization outlined below. If users want the ability to customize, then we'd like to keep things as simple as possible for users.
 
-### [Alternative 1]
+### `console.context()` remains the same, with no option for color customization
 
-[Describe an alternative which was considered,
-and why you decided against it.
-This alternative may have been part of a prior proposal in the same area,
-or it may be new.
-If you did any research in making this decision, discuss it here.]
+One option is to not provide any new way for user customization on a context's log messages. That is, `console.context()` will remain as it is with only one string argument to name the context. If a user wants to attempt to control the colors to distinguish logs, they can use the `%c` formatting for each message in a context (as described above in [Current experience in Chromium](#current-experience-in-chromium)).
 
-### [Alternative 2]
+In the Console UI, the display of context log messages will be determined by browser implementors. We will generate unique colors for context badges based on the user's theme (light or dark) and ensure these colors meet accessibility contrast standards in Chromium DevTools.
 
-[You may not have decided about some alternatives.
-Describe them as open questions here, and adjust the description once you make a decision.]
+### Apply `%c` formatting in a context name
+
+Another option is to just apply `%c` to the context name, like how you would to console logs.
+
+   > [!NOTE]  
+   > See https://github.com/whatwg/console/issues/193#issuecomment-2760521319 for a discussion about accepting `%c` formatting instead.
+
+### Show badges as outlined instead of filled
+
+In the Console UI, one consideration for filled color badges is the readability of the text color. Certain badge background colors might make the text difficult to read. To address this, we could allow users to specify two colors in `console.context()`: one for the badge background and one for the badge text. However, this level of customization might be overly complex and unnecessary.
+
+Instead, we could simplify it by using outlined badges with the label in the same color.`console.context()` would have a second optional `color` argument which we would use as the color for the badge outline and label, making color customization easier for users. Additionally, users could use `light-dark()` to specify a color for the context in both light and dark modes.
 
 ## Accessibility, privacy, and security considerations
 
