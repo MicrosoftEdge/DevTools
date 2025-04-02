@@ -150,7 +150,7 @@ We're proposing to improve the existing Chromium experience by making changes to
 
    We propose to keep the existing `context:context-name` search syntax, but also add new filtering UI in the Console sidebar.
    
-   To make filtering for contextual logs more user-friendly, we propose adding context names to the Console sidebar, so that developers can easily click on a context to filter out everything else.
+   To make filtering for contextual logs more user-friendly, we propose adding context names to the Console sidebar in a new section, so that developers can easily click on a context to filter out everything else.
 
    ![DevTools Console panel sidebar with context filters](console-sidebar-with-context-filters.png)
 
