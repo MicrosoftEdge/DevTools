@@ -33,7 +33,7 @@ An initial version of this feature has been available in [Chromium](https://chro
 
 ## Introduction
 
-This project aims to enhance the debugging process for large web applications by improving Chromium's `console.context()` method and enhancing filter options in the Console UI. This method allows developers to define logging contexts, making it easier to filter and identify log messages. Our improvements include introducing an optional color argument to `console.context()` for quick visual differentiation and updating the Console UI with context badges and additional filter support. These changes will make debugging more efficient, improve log readability, and simplify contextual logger cration.
+This project aims to enhance the debugging process for large web applications by improving Chromium's `console.context()` method and enhancing filter options in the Console UI. This method allows developers to define logging contexts, making it easier to filter and identify log messages. Our improvements include introducing an optional color argument to `console.context()` for quick visual differentiation and updating the Console UI with context badges and additional filter support. These changes will make debugging more efficient, improve log readability, and simplify contextual logger creation.
 
 ## User-facing problem
 
@@ -77,7 +77,7 @@ This proposal addresses three main use cases:
 
 ### Current experience in Chromium
 
-The experimental `console.context()` method is already available in Chromium, and addresses some of the above use cases, to some extend. The following items describe how well each use case is currently addressed:
+The experimental `console.context()` method is already available in Chromium, and addresses some of the above use cases, to some extent. The following items describe how well each use case is currently addressed:
 
 1. Emit logs from a specific context of an application.
 
@@ -132,6 +132,11 @@ We're proposing to improve the existing Chromium experience by making changes to
    If no color is provided, we propose assigning a random color that hasn't been used yet when the new logger instance is created. This will ensure that all context log messages are easily distinguishable.
 
 #### Changes to the Console tool UI
+
+> [!NOTE]  
+> This section is non-normative.
+>
+> Conforming user agents are not required to implement this UI. It is explanatory for how console contexts may be used for the purposes of surfacing information to developer tools which consume console messages.
 
 1. Display context badges next to messages logged from a context.
 
