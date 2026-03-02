@@ -1,7 +1,7 @@
 # DevTools: In-browser JSON viewer
 
 Authors:
- - *[Chris Heilmann](https://twitter.com/codepo8)*, PM, Microsoft Edge
+ - *[Adil Ishaq](https://twitter.com/codepo8)*, PM, Microsoft Edge
 
 ## Status of this feature
 
