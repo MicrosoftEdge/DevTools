@@ -18,7 +18,7 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-    - uses: champnic/Porpoise@main
+    - uses: champnic/Porpoise@53616a3f49347c37828be047ab6b0f3006a0fad1 # main as of 2026-10-23
       env:
         GH_PAT: '${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}'
         GH_OWNER: 'MicrosoftEdge'
